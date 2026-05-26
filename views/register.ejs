@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <%- include('header.ejs') %>
+    
+
+    <div class="form">
+        <h2>Welcome To Unemployed <br> Quotes!</h1>
+        <h4>Register to continue:</h4>
+      <form class="login" action="/register" method="POST" >
+        <input type="text" name="name" placeholder="Name" value="<%= name %>"/>
+        <input type="email" name="email" placeholder="Email" value="<%= email %>"/>
+        <input type="password" name="password" placeholder="Password" value="<%= password %>"/>
+        <input type="password" name="admin" placeholder="Admin code (if you have)" value="<%= admin %>"">
+        <button type="submit">Register</button>
+      </form>
+      <% if (errors) { errors.forEach(e=> { %>
+        <p><%= e.msg %></p>
+    <% })} %>
+
+        <p class="btm">Already registered? <a href="/login">Login</a></p>
+    </div>
+  </body>
+</html>
