@@ -12,5 +12,22 @@
   </head>
   <body>
     <%- include('header.ejs') %>
+
+    <section class="messages">
+      <% messages.forEach(m =>{ %>
+
+        <div class="card">
+          <div class="head">
+            <h2 > <%= m.title %> </h2>
+           <p > <%= m.author %> </p>
+           
+          </div>
+          <p><%= m.message %></p>
+        </div>
+
+
+
+        <% }) %>
+    </section>
   </body>
 </html>

@@ -82,3 +82,36 @@ header {
 .btm {
   color: var(--main-2);
 }
+
+.messages {
+  width: clamp(400px, 60vw, 1000px);
+  margin-inline: auto;
+  color: black;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 5rem;
+  gap: 20px;
+  grid-auto-rows: 150px;
+
+  .card {
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.109);
+    padding: 10px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    .head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      h2 {
+        font-size: 1.1rem;
+        color: var(--bg-2);
+      }
+      p {
+        color: var(--main-2);
+        opacity: 0.7;
+      }
+    }
+  }
+}

@@ -19,7 +19,7 @@ const validateInputsRegister = [
   body("name").notEmpty().withMessage("name is required!"),
 
   body("admin")
-    .custom((v) => v === proccess.env.ADMIN_PASSWORD)
+    .custom((v) => v != process.env.ADMIN_PASSWORD)
     .withMessage("wrong admin password!"),
 
   (req, res, next) => {
@@ -33,8 +33,9 @@ const validateInputsRegister = [
         name: req.body.name,
         admin: req.body.admin,
       });
+    } else {
+      return next();
     }
-    return next();
   },
 ];
 
